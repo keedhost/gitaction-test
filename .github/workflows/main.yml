@@ -1,0 +1,23 @@
+name: compile
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: debian
+    steps:
+      - uses: actions/checkout@v3
+      - name: Packages install
+        run: |
+            sudo apt update
+            sudo apt install cppcheck gcc
+            
+      - name: Compile
+        run: gcc main.c -o main
+        
+      - name: Launch
+        run: ./main
