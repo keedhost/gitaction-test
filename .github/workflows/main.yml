@@ -16,7 +16,10 @@ jobs:
             sudo apt install cppcheck gcc
             
       - name: Compile
-        run: gcc gitaction-test/main.c -o main
+        run: |
+            ls -lah
+            pwd
+            gcc gitaction-test/main.c -o main
         
       - name: Launch
         run: ./main
