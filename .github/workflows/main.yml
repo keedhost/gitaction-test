@@ -10,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Git select
+      - name: "Clone reposiory"
+        uses: actions/checkout@v2
         with:
           repository: "keedhost/gitaction-test.git"
           ref: "main"
