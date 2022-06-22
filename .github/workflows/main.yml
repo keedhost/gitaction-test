@@ -23,8 +23,7 @@ jobs:
             
       - name: Compile
         run: |
-            ls -lah
-            pwd
+            cppcheck --std=c99 --std=posix ./main.c
             gcc main.c -o main
         
       - name: Launch
